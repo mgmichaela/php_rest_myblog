@@ -12,3 +12,14 @@ $db = $database->connect();
 
 // Instantiate blog post object
 $post = new Post($db);
+
+// Get ID from URL
+if (isset($_GET['id'])) {
+    $post->id = $_GET['id'];
+} else {
+    $post->id = die();
+}
+
+// The Ternary Operator: 
+// $post->id = isset($_GET['id']) ? $_GET['id'] : die();
+
