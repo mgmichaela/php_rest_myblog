@@ -85,4 +85,39 @@ class Post
         $this->category_id = $row['category_id'];
         $this->category_name = $row['category_name'];
     }
+
+    // Create post 
+    public function create()
+    {
+        // Create query
+        $query = 'INSERT INTO ' . $this->table . '
+            SET
+                title = :title,
+                body = :body,
+                author = :author,
+                category_id = :category_id';
+
+        // Prepare statement
+        $statement = $this->conn->prepare($query);
+
+        // Clean data
+        $this->title = htmlspecialchars(strip_tags($this->title));
+        $this->body = htmlspecialchars(strip_tags($this->body));
+        $this->author = htmlspecialchars(strip_tags($this->author));
+        $this->category_id = htmlspecialchars(strip_tags($this->category_id));
+
+        // Bind data
+        $statement->bindParam(':title', $this->title);
+        $statement->bindParam(':body', $this->body);
+        $statement->bindParam(':author', $this->author);
+        $statement->bindParam(':category_id', $this->category_id);
+
+        // Execute query
+        if($statement->execute()) {
+            return true;
+        }
+        // if something goes wrong, print error
+        printf("Error: %s.\n", $statement->error);
+        return false;
+    }
 }
