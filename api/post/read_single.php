@@ -35,3 +35,6 @@ $post_arr = array(
   'category_id' => $post->category_id,
   'cagetory_name' => $post->cagetory_name
 );
+
+// Make JSON 
+print_r(json_encode($post_arr));
