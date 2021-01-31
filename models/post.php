@@ -119,5 +119,45 @@ class Post
         // if something goes wrong, print error
         printf("Error: %s.\n", $statement->error);
         return false;
+
+    }
+
+    // Update post 
+    public function update()
+    {
+        // Create query
+        $query = 'UPDATE ' . $this->table . '
+            SET
+                title = :title,
+                body = :body,
+                author = :author,
+                category_id = :category_id
+              WHERE
+              id = :id';
+
+        // Prepare statement
+        $statement = $this->conn->prepare($query);
+
+        // Clean data
+        $this->title = htmlspecialchars(strip_tags($this->title));
+        $this->body = htmlspecialchars(strip_tags($this->body));
+        $this->author = htmlspecialchars(strip_tags($this->author));
+        $this->category_id = htmlspecialchars(strip_tags($this->category_id));
+        $this->id = htmlspecialchars(strip_tags($this->id));
+
+        // Bind data
+        $statement->bindParam(':title', $this->title);
+        $statement->bindParam(':body', $this->body);
+        $statement->bindParam(':author', $this->author);
+        $statement->bindParam(':category_id', $this->category_id);
+        $statement->bindParam(':id', $this->id);
+
+        // Execute query
+        if($statement->execute()) {
+            return true;
+        }
+        // if something goes wrong, print error
+        printf("Error: %s.\n", $statement->error);
+        return false;
     }
 }
