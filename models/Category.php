@@ -16,7 +16,8 @@ class Category
     public function read() {
         $query = 'SELECT
         id,
-        name
+        name,
+        created_at
         FROM 
         ' . $this->table . '
         ORDER BY
