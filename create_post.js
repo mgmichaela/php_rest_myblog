@@ -25,6 +25,6 @@ async function submitPost() {
       alert('Failed: Post Was Not Submitted')
   }
 
-};
+}
 
 
