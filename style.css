@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -10,5 +13,35 @@
 }
 
 body {
-  background: var(--black);
+  background: var(--light-blue);
+}
+
+h1,
+h2,
+p {
+  color: var(--black);
+  padding: 5px;
+}
+
+h1 {
+  font-family: "BioRhyme", serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "BioRhyme", serif;
+  font-weight: 400;
+}
+
+p {
+    font-family: 'Space Mono', monospace;
+    text-align: justify;
+}
+
+#posts {
+  margin: 20px;
+}
+
+div {
+  padding: 20px;
 }
