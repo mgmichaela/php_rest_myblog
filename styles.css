@@ -41,7 +41,9 @@ textarea {
   flex-direction: row;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea[type="text"] {
+  font-family: "Space Mono", monospace;
   font-size: 25px;
 }
 
@@ -52,6 +54,7 @@ button {
   padding: 10px;
   font-family: "BioRhyme", serif;
   font-size: 15px;
-  font-weight: 400;
+  /*font-weight: bolder; --> this does not want to change, FIX!*/
   cursor: pointer;
+  box-shadow: 5px 5px #3d3d3d;
 }
