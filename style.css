@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 
 * {
   margin: 0;
@@ -10,32 +10,38 @@
 :root {
   --black: #0d0e0c;
   --light-blue: #c9d8bf;
+  --white: #bbcfb8;
 }
 
 body {
-  background: var(--light-blue);
+  background: var(--white);
 }
 
 h1,
 h2,
 p {
+  background: var(--light-blue);
   color: var(--black);
-  padding: 5px;
+  margin: 10px;
+  padding: 10px;
 }
 
 h1 {
   font-family: "BioRhyme", serif;
+  font-size: 25px;
   font-weight: 700;
 }
 
 h2 {
   font-family: "BioRhyme", serif;
+  font-size: 15px;
   font-weight: 400;
 }
 
 p {
-    font-family: 'Space Mono', monospace;
-    text-align: justify;
+  font-family: "Space Mono", monospace;
+  font-size: 15px;
+  text-align: justify;
 }
 
 #posts {
